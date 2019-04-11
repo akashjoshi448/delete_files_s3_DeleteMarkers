@@ -1,10 +1,9 @@
 """
     This file is deleting the files that have delete_marker tags on S3 recusively go in all the folders and subfolders of that bucket.
 """
-
-import boto3, json, argparse
-from boto3.session import Session
+import boto3, argparse
 import sys
+
 def str2bool(v):
     if v.lower() in ('yes', 'true', 't', 'y', '1'):
         return True
@@ -12,6 +11,10 @@ def str2bool(v):
         return False
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
+
+def exit(message=''):
+    sys.exit(message)
+
 # initiate the parser
 parser = argparse.ArgumentParser()
 requiredNamed = parser.add_argument_group('Required named arguments')
@@ -24,8 +27,6 @@ parser.add_argument("--delete", "-D", type=str2bool, nargs='?',
                         const=True, default=False,
                         help="Confirm if you want to delete(Default False).(optional)")
 
-def exit(message=''):
-    sys.exit(message)
 
 
 # read arguments from the command line
