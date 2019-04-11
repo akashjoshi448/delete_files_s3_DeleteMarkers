@@ -15,5 +15,6 @@ Run example
 "-R", help="S3 region(Required)"
 "-F", help="Folder of s3 in which all files you want to delete.(optional)"{If not passed it will go into all the folder of that bucket}
 "-D", help="Confirm if you want to delete(Default False).(optional)"{If not given it will not delete the files but only print the files that will be deleted.}
+# Run file example
 "python2.7 s3.py -F resources/ -A XXXXXX -S XXXXXX -R XXXXX -D (Bool y,n) -F XXXXX -B XXXXXX"
 
