@@ -67,7 +67,7 @@ def init(Prefix='', Delimiter='/'):
                     delete_marked_file['Key'],
                     delete_marked_file['VersionId']
                     )
-                    # response.delete()
+                    response.delete()
                 except Exception as e:
                     # TODO: Not handeled exception yet
                     print 'Could not delete file>>'
