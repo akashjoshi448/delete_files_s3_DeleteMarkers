@@ -44,7 +44,7 @@ s3 = boto3.resource(
     aws_access_key_id=args.access_key,
     aws_secret_access_key=args.secret_key,
 )
-
+BUCKET_NAME = args.bucket
 bucket = s3.Bucket(BUCKET_NAME)
 def init(Prefix='', Delimiter='/'):
     result = client.list_object_versions(
@@ -67,10 +67,10 @@ def init(Prefix='', Delimiter='/'):
                     delete_marked_file['Key'],
                     delete_marked_file['VersionId']
                     )
-                    # response.delete()
+                    response.delete()
                 except Exception as e:
                     # TODO: Not handeled exception yet
-                    print 'Could not delete file>>'
+                    print 'Could not delete file>>', str(e)
                     print delete_marked_file['Key']
     else:
         print 'No deleted files found in folder>>'
