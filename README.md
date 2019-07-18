@@ -7,8 +7,8 @@ Take pull
 Install requirements.txt
 Run "python2.7 run.py -h"(This will give you help to let you know the required params to pass)
 # Example to run
-"python2.7 s3.py -F resources/ -A XXXXXX -S XXXXXX -R XXXXX -D (Bool y,n) -F XXXXX -B XXXXXX"
-# Varialbes to be passed
+"python2.7 run.py -A XXXXXX -S XXXXXX -R XXXXX -D (Bool y,n) -F XXXXX -B XXXXXX"
+# Variables to be passed
 "-A", help="Access key of s3(Required)"
 
 "-S", help="Secret key of s3(Required)"
